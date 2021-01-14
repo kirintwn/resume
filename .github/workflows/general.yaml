@@ -92,6 +92,7 @@ jobs:
             npx \
               -p @semantic-release/commit-analyzer \
               -p @semantic-release/release-notes-generator \
+              -p conventional-changelog-conventionalcommits \
               -p @semantic-release/changelog \
               -p @semantic-release/git \
               -p @semantic-release/github \
