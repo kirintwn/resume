@@ -1,0 +1,4 @@
+--read-all
+--dict dict.txt
+--ignore sh:d:001,sh:d:002,sh:nonp,sh:nobreak,lt:en:PUNCTUATION_PARAGRAPH_END,lt:en:PUNCTUATION_PARAGRAPH_END,lt:en:UPPERCASE_SENTENCE_START,lt:en:UPPERCASE_SENTENCE_START,lt:en:COMMA_PARENTHESIS_WHITESPACE
+--check en

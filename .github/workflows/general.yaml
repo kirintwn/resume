@@ -1,0 +1,107 @@
+name: general
+on:
+  push:
+    branches:
+      - "**"
+    tags-ignore:
+      - "**"
+
+jobs:
+  super-linter:
+    name: super-linter
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run super linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: "false"
+          VALIDATE_BASH: "true"
+          VALIDATE_EDITORCONFIG: "true"
+          VALIDATE_MD: "true"
+          VALIDATE_YAML: "true"
+          FILTER_REGEX_EXCLUDE: '.*/(CHANGELOG\.md)'
+
+  textidote:
+    name: textidote
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run textidote
+        uses: ChiefGokhlayeh/textidote-action@v4
+        id: textidote-main
+        with:
+          root_file: resume.tex
+          args: |
+            --check en
+            --dict dict.txt
+            --ignore sh:d:001,sh:d:002,sh:nonp,sh:nobreak,lt:en:PUNCTUATION_PARAGRAPH_END,lt:en:PUNCTUATION_PARAGRAPH_END,lt:en:UPPERCASE_SENTENCE_START,lt:en:UPPERCASE_SENTENCE_START,lt:en:COMMA_PARENTHESIS_WHITESPACE
+      - name: Upload textidote report
+        uses: actions/upload-artifact@v2
+        with:
+            name: textidote_report
+            path: report.html
+      - name: Assert num_warnings == 0
+        if: ${{ steps.textidote-main.outputs.num_warnings != 0 }}
+        run: 'echo "num_warnings: ${{ steps.textidote-main.outputs.num_warnings }}"; exit 1;'
+
+  build-latex:
+    name: build-latex
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Compile latex documents
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: resume.tex
+          latexmk_use_xelatex: true
+      - name: Upload resume.pdf
+        uses: actions/upload-artifact@v2
+        with:
+            name: resume
+            path: resume.pdf
+
+  release:
+    name: release
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - super-linter
+      - textidote
+      - build-latex
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Download resume.pdf from build-latex
+        uses: actions/download-artifact@v2
+        with:
+          name: resume
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: kirintwn
+          GIT_AUTHOR_EMAIL: cy91244@gmail.com
+          GIT_COMMITTER_NAME: kirintwn
+          GIT_COMMITTER_EMAIL: cy91244@gmail.com
+        run: |
+            npx \
+              -p @semantic-release/commit-analyzer \
+              -p @semantic-release/release-notes-generator \
+              -p conventional-changelog-conventionalcommits \
+              -p @semantic-release/changelog \
+              -p @semantic-release/git \
+              -p @semantic-release/github \
+              -p semantic-release \
+              semantic-release
