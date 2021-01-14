@@ -2,11 +2,11 @@
 
 [![Release](https://img.shields.io/github/release/kirintwn/resume.svg?style=for-the-badge)](https://github.com/kirintwn/resume/releases/latest)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](/LICENSE.md)
-[![Build status](https://img.shields.io/github/workflow/status/kirintwn/resume/test/main?style=for-the-badge)](https://github.com/kirintwn/resume/actions?workflow=test)
+[![Build status](https://img.shields.io/github/workflow/status/kirintwn/resume/general/main?style=for-the-badge)](https://github.com/kirintwn/resume/actions?workflow=test)
 [![TeXtidote](https://img.shields.io/badge/style-TeXtidote-yellowgreen?style=for-the-badge)](https://github.com/sylvainhalle/textidote)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge)](https://conventionalcommits.org)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-release)
 
-My resume written in LaTeX based on [Awesome-CV](https://github.com/posquit0/Awesome-CV) with complete CI/CD pipline. Fully automated testing, building & release process is powered by GitHub Actions. The output pdf can be found in the [releases section](https://github.com/kirintwn/resume/releases/latest), or the preview is available [here](https://docs.google.com/viewer?url=https://github.com/kirintwn/resume/releases/latest/download/resume.pdf).
+My resume written in LaTeX based on [Awesome-CV](https://github.com/posquit0/Awesome-CV) with complete CI/CD pipline. Fully automated testing, building & release process is powered by GitHub Actions & [semantic-release](https://github.com/semantic-release/semantic-release). The output pdf can be found in the [releases section](https://github.com/kirintwn/resume/releases/latest), or the preview is available [here](https://docs.google.com/viewer?url=https://github.com/kirintwn/resume/releases/latest/download/resume.pdf) with Google Docs.
 
 ## Download: [resume.pdf](https://github.com/kirintwn/resume/releases/latest/download/resume.pdf)
 
