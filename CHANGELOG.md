@@ -3,6 +3,13 @@
 
 ### Features
 
+* initial release ([a4057ff](https://github.com/kirintwn/resume/commit/a4057ffd5e5175966cdd54505ab57217b0a8e93c))
+
+## 1.0.0 (2021-01-14)
+
+
+### Features
+
 * **contents:** update contents ([#2](https://github.com/kirintwn/resume/issues/2)) ([c58eced](https://github.com/kirintwn/resume/commit/c58eced7978c5a37d8c74f306b8cf3e9a91a2353))
 
 
