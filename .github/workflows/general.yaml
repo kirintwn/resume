@@ -35,16 +35,23 @@ jobs:
         uses: ChiefGokhlayeh/textidote-action@v4
         id: textidote-main
         with:
-          root_file: resume.tex
-          args: |
-            --check en
-            --dict dict.txt
-            --ignore sh:d:001,sh:d:002,sh:nonp,sh:nobreak,lt:en:PUNCTUATION_PARAGRAPH_END,lt:en:PUNCTUATION_PARAGRAPH_END,lt:en:UPPERCASE_SENTENCE_START,lt:en:UPPERCASE_SENTENCE_START,lt:en:COMMA_PARENTHESIS_WHITESPACE
+          working_directory: .
+          root_file: src/resume.tex
+          report_type: plain
+          report_file: ""
+      - name: Run textidote to generate report
+        uses: ChiefGokhlayeh/textidote-action@v4
+        with:
+          working_directory: .
+          root_file: src/resume.tex
+          report_type: html
+          report_file: report.html
       - name: Upload textidote report
         uses: actions/upload-artifact@v2
         with:
             name: textidote_report
             path: report.html
+            if-no-files-found: error
       - name: Assert num_warnings == 0
         if: ${{ steps.textidote-main.outputs.num_warnings != 0 }}
         run: 'echo "num_warnings: ${{ steps.textidote-main.outputs.num_warnings }}"; exit 1;'
@@ -58,13 +65,15 @@ jobs:
       - name: Compile latex documents
         uses: xu-cheng/latex-action@v2
         with:
+          working_directory: src
           root_file: resume.tex
-          latexmk_use_xelatex: true
+          args: "-lualatex -interaction=nonstopmode -output-directory=../"
       - name: Upload resume.pdf
         uses: actions/upload-artifact@v2
         with:
             name: resume
             path: resume.pdf
+            if-no-files-found: error
 
   release:
     name: release

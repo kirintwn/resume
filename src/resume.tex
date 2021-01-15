@@ -1,0 +1,50 @@
+% !TEX TS-program = luatex
+% Awesome Source CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/darwiin/awesome-neue-latex-cv
+%
+% Author:
+% Christophe Roger (Darwiin)
+%
+% Edit:
+% Kirin Hou
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+\documentclass[localFont,alternative,10pt,compact,monochrome]{yaac-another-awesome-cv}
+
+\name{Kirin}{Hou}
+\tagline{Software Engineer | DevOps Engineer}
+\photo{2 cm}{images/profile}
+\socialinfo{
+  \linkedin{kirin-hou}
+  \github{kirintwn}
+  \email{kirintw@kirintw.app}
+  \website{https://kirintw.app}{kirintw.app}
+  \address{Taipei, Taiwan}
+}
+
+\begin{document}
+
+  \makecvheader
+
+  \makecvfooter
+    {\textsc{\today}} % \selectlanguage{english}\today
+    {Up-to-date version at \url{https://github.com/kirintwn/resume}}
+    {\thepage}
+
+  \input{sections/headline.tex}
+  \medskip
+
+  \input{sections/experience.tex}
+
+  \input{sections/education.tex}
+
+  \input{sections/skills-and-certificates.tex}
+  \bigskip
+
+  \input{sections/projects.tex}
+
+\end{document}
