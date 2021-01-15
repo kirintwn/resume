@@ -89,8 +89,7 @@ jobs:
           node-version: '14'
       - name: Release
         env:
-          GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: kirintwn
           GIT_AUTHOR_EMAIL: cy91244@gmail.com
           GIT_COMMITTER_NAME: kirintwn
