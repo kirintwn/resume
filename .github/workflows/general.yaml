@@ -67,12 +67,12 @@ jobs:
         with:
           working_directory: src
           root_file: resume.tex
-          args: "-lualatex -interaction=nonstopmode -output-directory=../"
+          latexmk_use_lualatex: true
       - name: Upload resume.pdf
         uses: actions/upload-artifact@v2
         with:
             name: resume
-            path: resume.pdf
+            path: src/resume.pdf
             if-no-files-found: error
 
   release:

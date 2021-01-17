@@ -25,7 +25,15 @@ build:
 		--name latex \
 		-v $$PWD/src:/opt/resume/src:ro \
 		ghcr.io/xu-cheng/texlive-full:latest \
-		latexmk -cd -lualatex -interaction=nonstopmode -output-directory=/tmp /opt/resume/src/resume.tex
+		latexmk \
+			-cd \
+			-lualatex \
+			--file-line-error \
+			--halt-on-error \
+			--interaction=nonstopmode \
+			-recorder \
+			-output-directory=/tmp \
+			/opt/resume/src/resume.tex
 	docker cp latex:/tmp/resume.pdf .
 
 .PHONY: remove
