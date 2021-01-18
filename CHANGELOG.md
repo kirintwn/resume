@@ -1,3 +1,10 @@
+### [1.1.3](https://github.com/kirintwn/resume/compare/v1.1.2...v1.1.3) (2021-01-18)
+
+
+### Bug Fixes
+
+* **contents:** fix typo in skills ([a5c76f5](https://github.com/kirintwn/resume/commit/a5c76f5d85f536c6e06c49ed142dda326340e7b1))
+
 ### [1.1.2](https://github.com/kirintwn/resume/compare/v1.1.1...v1.1.2) (2021-01-18)
 
 
