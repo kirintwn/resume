@@ -1,3 +1,15 @@
+### [1.1.1](https://github.com/kirintwn/resume/compare/v1.1.0...v1.1.1) (2021-01-18)
+
+
+### Bug Fixes
+
+* **contents:** update email & resume url, remove website ([#6](https://github.com/kirintwn/resume/issues/6)) ([c31b706](https://github.com/kirintwn/resume/commit/c31b706b371e12508bfbf87f886a44374e4a07b4))
+
+
+### CI
+
+* **build-latex:** tweak build-latex commands ([#5](https://github.com/kirintwn/resume/issues/5)) ([54f106c](https://github.com/kirintwn/resume/commit/54f106cabcb3ef316c6d41b0adf897a2a8616524))
+
 ## [1.1.0](https://github.com/kirintwn/resume/compare/v1.0.0...v1.1.0) (2021-01-17)
 
 
