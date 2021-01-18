@@ -62,7 +62,7 @@ testSuperLinter:
 		-e VALIDATE_MD="true" \
 		-e VALIDATE_YAML="true" \
 		-e FILTER_REGEX_EXCLUDE='.*/(CHANGELOG\.md)' \
-		-v $$PWD:/tmp/lint \
+		-v $$PWD:/tmp/lint:ro \
 		github/super-linter:latest
 
 .PHONY: testTextidote
@@ -70,6 +70,6 @@ testTextidote:
 	docker run \
 		--rm \
 		--name textidote \
-		-v $$PWD:/textidote \
+		-v $$PWD:/textidote:ro \
 		gokhlayeh/textidote:latest \
 		/textidote/src/resume.tex /textidote plain "" 0
