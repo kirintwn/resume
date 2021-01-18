@@ -27,7 +27,7 @@ CircleCI
 EKS
 Kubernetes
 TypeScript
-Javascript
+JavaScript
 Koa
 NestJS
 VSCode
