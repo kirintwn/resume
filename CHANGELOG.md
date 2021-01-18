@@ -1,3 +1,16 @@
+### [1.1.2](https://github.com/kirintwn/resume/compare/v1.1.1...v1.1.2) (2021-01-18)
+
+
+### Bug Fixes
+
+* **contents:** fix headline texts ([01d0bd7](https://github.com/kirintwn/resume/commit/01d0bd78c5106d1bc5c2f3e0272c502b09d09c2f))
+
+
+### Build
+
+* **makefile:** add super linter & some tweaks ([b2a4eda](https://github.com/kirintwn/resume/commit/b2a4eda706ea7d82ebf555bbafd72a42c0ac05d3))
+* **makefile:** mount readonly volume when testing ([7dd4b19](https://github.com/kirintwn/resume/commit/7dd4b19f452ed44dac3c368fcea74aea66844d53))
+
 ### [1.1.1](https://github.com/kirintwn/resume/compare/v1.1.0...v1.1.1) (2021-01-18)
 
 
