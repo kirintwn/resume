@@ -1,3 +1,10 @@
+### [1.1.4](https://github.com/kirintwn/resume/compare/v1.1.3...v1.1.4) (2021-01-19)
+
+
+### Bug Fixes
+
+* **contents:** fix projects section & typo in experience ([#7](https://github.com/kirintwn/resume/issues/7)) ([f24bfac](https://github.com/kirintwn/resume/commit/f24bfacd8d4b0afb1998789fd161b44db79086a7))
+
 ### [1.1.3](https://github.com/kirintwn/resume/compare/v1.1.2...v1.1.3) (2021-01-18)
 
 
