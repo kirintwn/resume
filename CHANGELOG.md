@@ -1,3 +1,15 @@
+## [1.2.0](https://github.com/kirintwn/resume/compare/v1.1.4...v1.2.0) (2021-01-27)
+
+
+### Features
+
+* **contents:** add open source contribution ([12ce0bd](https://github.com/kirintwn/resume/commit/12ce0bd38532d7ce7b9971fd97ee5d15910c9d3d))
+
+
+### Bug Fixes
+
+* **contents:** fix typo in skills ([1cfe716](https://github.com/kirintwn/resume/commit/1cfe716bb4e87612c913d7e3120e60b04c882173))
+
 ### [1.1.4](https://github.com/kirintwn/resume/compare/v1.1.3...v1.1.4) (2021-01-19)
 
 
