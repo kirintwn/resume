@@ -493,7 +493,6 @@
     #4\smallskip\\
     \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
   \end{minipage}
-  \\
   \\*
 }
 
