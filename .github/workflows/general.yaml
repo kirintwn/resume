@@ -18,7 +18,7 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: "false"
+          VALIDATE_ALL_CODEBASE: "true"
           VALIDATE_BASH: "true"
           VALIDATE_EDITORCONFIG: "true"
           VALIDATE_MD: "true"
