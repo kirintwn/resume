@@ -1,3 +1,20 @@
+## [1.3.0](https://github.com/kirintwn/resume/compare/v1.2.0...v1.3.0) (2021-02-07)
+
+
+### Features
+
+* **contents:** rewrite with more concrete statements ([#10](https://github.com/kirintwn/resume/issues/10)) ([e23637a](https://github.com/kirintwn/resume/commit/e23637a209b7a19eee7feacda21399bf3f7604b0))
+
+
+### Documentations
+
+* **template:** update template source ([9ce620e](https://github.com/kirintwn/resume/commit/9ce620e0c052faf248981c14a7d171a59c9d689b))
+
+
+### CI
+
+* **super-linter:** enable validate all codebase ([#9](https://github.com/kirintwn/resume/issues/9)) ([f495903](https://github.com/kirintwn/resume/commit/f49590384e9c46703579be31dc09d33308649b5d))
+
 ## [1.2.0](https://github.com/kirintwn/resume/compare/v1.1.4...v1.2.0) (2021-01-27)
 
 
