@@ -1,3 +1,10 @@
+### [1.3.1](https://github.com/kirintwn/resume/compare/v1.3.0...v1.3.1) (2021-02-07)
+
+
+### Bug Fixes
+
+* **contents:** fix a tag text in projects ([#11](https://github.com/kirintwn/resume/issues/11)) ([8e19cad](https://github.com/kirintwn/resume/commit/8e19cad35eee215dfe2c6fe8914d385570bc5a20))
+
 ## [1.3.0](https://github.com/kirintwn/resume/compare/v1.2.0...v1.3.0) (2021-02-07)
 
 
