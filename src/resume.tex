@@ -15,6 +15,8 @@
 
 \documentclass[localFont,alternative,10pt,compact,monochrome]{yaac-another-awesome-cv}
 
+\setlength{\leftcolumnlength}{1.5 cm}
+
 \name{Kirin}{Hou}
 \tagline{Software Engineer | DevOps Engineer}
 \photo{2 cm}{images/profile}
@@ -30,19 +32,25 @@
   \makecvheader
 
   \makecvfooter
-    {\textsc{\today}} % \selectlanguage{english}\today
+    {\textsc{\today}}
     {Up-to-date version at \url{https://resume.kirintw.me}}
     {\thepage}
 
+  \vspace*{-0.2cm}
   \input{sections/headline.tex}
-  \medskip
+  \smallskip
 
-  \input{sections/experience.tex}
+  \input{sections/experiences.tex}
+  \vspace*{-0.2cm}
 
   \input{sections/education.tex}
+  \vspace*{-0.2cm}
 
-  \input{sections/skills-and-certificates.tex}
+  \input{sections/skills.tex}
   \bigskip
+
+  \input{sections/Languages.tex}
+  \medskip
 
   \input{sections/projects.tex}
 

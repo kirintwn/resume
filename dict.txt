@@ -6,6 +6,8 @@ bigskip
 medskip
 smallskip
 emptySeparator
+texttt
+leftcolumnlength
 faTasks
 faSuitcase
 faLaptop
@@ -14,7 +16,11 @@ faGraduationCap
 Env
 Node.js
 React.js
-React-Redux
+React
+Redux
+Webpack
+Babel
+Gulp
 GraphQL
 RESTful
 QPS
@@ -37,6 +43,7 @@ DevOps
 Fargate
 FullStack
 backend
+frontend
 serverless
 PWA
 web‐based
@@ -48,9 +55,8 @@ Matplotlib
 contab
 cdnjs
 opencti
+aws
 aws-cdk
-Fullstack
-backend
 Ugotit
 Artise
 Hsinchu
@@ -71,3 +77,6 @@ kirintw
 Kirin
 Hou
 problem‐solving
+entrypoint
+prebuilt
+nodeunit
