@@ -1,3 +1,10 @@
+### [1.3.2](https://github.com/kirintwn/resume/compare/v1.3.1...v1.3.2) (2021-02-07)
+
+
+### Bug Fixes
+
+* **contents:** move languages to skills & add a project ([#12](https://github.com/kirintwn/resume/issues/12)) ([5a168e6](https://github.com/kirintwn/resume/commit/5a168e620ded43fcf44c673af026a1dac5b127a0))
+
 ### [1.3.1](https://github.com/kirintwn/resume/compare/v1.3.0...v1.3.1) (2021-02-07)
 
 
