@@ -1,3 +1,10 @@
+### [1.3.3](https://github.com/kirintwn/resume/compare/v1.3.2...v1.3.3) (2021-02-19)
+
+
+### Bug Fixes
+
+* **contents:** fix typo in experiences ([#13](https://github.com/kirintwn/resume/issues/13)) ([77dd7c3](https://github.com/kirintwn/resume/commit/77dd7c347ffdfd9dc5e5d97e9a760b2fe507c8f4))
+
 ### [1.3.2](https://github.com/kirintwn/resume/compare/v1.3.1...v1.3.2) (2021-02-07)
 
 
