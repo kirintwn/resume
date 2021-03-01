@@ -131,6 +131,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: .
-          allow_empty_commit: true
           force_orphan: true
           commit_message: 'release: update gh-pages to latest version'
