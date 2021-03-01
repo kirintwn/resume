@@ -113,3 +113,24 @@ jobs:
               -p @semantic-release/github \
               -p semantic-release \
               semantic-release
+
+  deploy-gh-pages:
+    name: deploy-gh-pages
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - release
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Download resume.pdf from build-latex
+        uses: actions/download-artifact@v2
+        with:
+          name: resume
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: .
+          allow_empty_commit: true
+          force_orphan: true
+          commit_message: 'release: update gh-pages to latest version'
