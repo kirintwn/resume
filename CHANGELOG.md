@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/kirintwn/resume/compare/v1.3.3...v1.4.0) (2021-03-01)
+
+
+### Features
+
+* deploy to github pages ([8adcb91](https://github.com/kirintwn/resume/commit/8adcb91f0930ad995a6ebd12dd6d35f0aa739117))
+
 ### [1.3.3](https://github.com/kirintwn/resume/compare/v1.3.2...v1.3.3) (2021-02-19)
 
 
