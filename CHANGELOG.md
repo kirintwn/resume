@@ -1,3 +1,21 @@
+## [1.5.0](https://github.com/kirintwn/resume/compare/v1.4.0...v1.5.0) (2021-03-10)
+
+
+### Features
+
+* **contents:** update job title ([82bfa4b](https://github.com/kirintwn/resume/commit/82bfa4b3a2c20497019dffd2fdfbc6ee32f175d9))
+
+
+### Documentations
+
+* **readme:** use gh-pages link for download ([09a22ec](https://github.com/kirintwn/resume/commit/09a22ec24116bb1829f2288a2440b5df7e6bdbf1))
+
+
+### CI
+
+* **actions:** disallow empty commit when deploy gh-pages ([c9c610d](https://github.com/kirintwn/resume/commit/c9c610d9dece5f96607c8759fec9173148d4f185))
+* **semantic-release:** add skip ci when releasing ([24049df](https://github.com/kirintwn/resume/commit/24049dff28c62f53f19d375e56989e5665e1b301))
+
 ## [1.4.0](https://github.com/kirintwn/resume/compare/v1.3.3...v1.4.0) (2021-03-01)
 
 
