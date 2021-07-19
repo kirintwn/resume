@@ -1,3 +1,15 @@
+## [1.6.0](https://github.com/kirintwn/resume/compare/v1.5.0...v1.6.0) (2021-07-19)
+
+
+### Features
+
+* **contents:** update experiences ([298f750](https://github.com/kirintwn/resume/commit/298f750f977a1c7fed5851155118af8ca8706035))
+
+
+### CI
+
+* **actions:** update ci deps ([6a1e635](https://github.com/kirintwn/resume/commit/6a1e6352ced981147fa254cc081b581c284623ec))
+
 ## [1.5.0](https://github.com/kirintwn/resume/compare/v1.4.0...v1.5.0) (2021-03-10)
 
 
