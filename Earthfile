@@ -24,8 +24,6 @@ test-textidote:
   FROM gokhlayeh/textidote:v4.1
   WORKDIR /opt/resume
   COPY --dir src .textidote dict.txt ./
-  RUN ls -al src
-  RUN ls -al
   RUN /entrypoint.sh /opt/resume/src/resume.tex /opt/resume plain "" 0
 
 build:
