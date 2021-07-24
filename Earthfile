@@ -7,7 +7,7 @@ test:
   BUILD +test-textidote
 
 test-super-linter:
-  FROM github/super-linter:slim-v4.5.0
+  FROM github/super-linter:slim-v4.5.1
   ENV RUN_LOCAL="true"
   ENV MULTI_STATUS="false"
   ENV VALIDATE_ALL_CODEBASE="true"
