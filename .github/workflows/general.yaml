@@ -2,11 +2,24 @@ name: general
 on:
   push:
     branches:
-      - "**"
+      - '**'
     tags-ignore:
-      - "**"
+      - '**'
 
 jobs:
+  prettier:
+    name: prettier
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run prettier checks
+        uses: creyD/prettier_action@v4.2
+        with:
+          prettier_version: '2.5.1'
+          prettier_options: --check **/*.{yaml,json,md}
+          dry: true
+
   super-linter:
     name: super-linter
     runs-on: ubuntu-20.04
@@ -14,15 +27,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run super linter
-        uses: github/super-linter@v3
+        uses: github/super-linter/slim@v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: "true"
-          VALIDATE_BASH: "true"
-          VALIDATE_EDITORCONFIG: "true"
-          VALIDATE_MD: "true"
-          VALIDATE_YAML: "true"
+          VALIDATE_ALL_CODEBASE: 'true'
+          VALIDATE_BASH: 'true'
+          VALIDATE_EDITORCONFIG: 'true'
+          VALIDATE_MD: 'true'
+          VALIDATE_YAML: 'true'
           FILTER_REGEX_EXCLUDE: '.*/(CHANGELOG\.md)'
 
   build-latex:
@@ -48,6 +61,7 @@ jobs:
     name: release
     if: github.ref == 'refs/heads/main'
     needs:
+      - prettier
       - super-linter
       - build-latex
     runs-on: ubuntu-20.04
@@ -63,7 +77,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: '16'
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
@@ -100,4 +114,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: .
           force_orphan: true
-          commit_message: "release: update gh-pages to latest version"
+          commit_message: 'release: update gh-pages to latest version'
