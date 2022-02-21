@@ -1,3 +1,21 @@
+## [2.0.0](https://github.com/kirintwn/resume/compare/v1.6.0...v2.0.0) (2022-02-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace yaac-another-awesome-cv with awesome-cv
+
+### Features
+
+* rewrite with awesome-cv & add xendit in experience ([#14](https://github.com/kirintwn/resume/issues/14)) ([79de12d](https://github.com/kirintwn/resume/commit/79de12db3e0c796cc4281a139283ca1ed76097a3))
+
+
+### Build
+
+* **earthly:** remove unneeded steps ([629cde0](https://github.com/kirintwn/resume/commit/629cde01372c044f6088db81b7ebf846c2136992))
+* **earthly:** update deps ([7e898f3](https://github.com/kirintwn/resume/commit/7e898f3b18a1bb621f72c029ca41f8d55bd34997))
+* use earthly as local build system ([9d8b5e6](https://github.com/kirintwn/resume/commit/9d8b5e648f8b5fcef13ca1a2e4cd8fa41f0f2bf3))
+
 ## [1.6.0](https://github.com/kirintwn/resume/compare/v1.5.0...v1.6.0) (2021-07-19)
 
 
