@@ -2,11 +2,24 @@ name: general
 on:
   push:
     branches:
-      - "**"
+      - '**'
     tags-ignore:
-      - "**"
+      - '**'
 
 jobs:
+  prettier:
+    name: prettier
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run prettier checks
+        uses: creyD/prettier_action@v4.2
+        with:
+          prettier_version: '2.5.1'
+          prettier_options: --check **/*.{yaml,json,md}
+          dry: true
+
   super-linter:
     name: super-linter
     runs-on: ubuntu-20.04
@@ -14,47 +27,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run super linter
-        uses: github/super-linter@v3
+        uses: github/super-linter/slim@v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: "true"
-          VALIDATE_BASH: "true"
-          VALIDATE_EDITORCONFIG: "true"
-          VALIDATE_MD: "true"
-          VALIDATE_YAML: "true"
+          VALIDATE_ALL_CODEBASE: 'true'
+          VALIDATE_BASH: 'true'
+          VALIDATE_EDITORCONFIG: 'true'
+          VALIDATE_MD: 'true'
+          VALIDATE_YAML: 'true'
           FILTER_REGEX_EXCLUDE: '.*/(CHANGELOG\.md)'
-
-  textidote:
-    name: textidote
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Run textidote
-        uses: ChiefGokhlayeh/textidote-action@v4
-        id: textidote-main
-        with:
-          working_directory: .
-          root_file: src/resume.tex
-          report_type: plain
-          report_file: ""
-      - name: Run textidote to generate report
-        uses: ChiefGokhlayeh/textidote-action@v4
-        with:
-          working_directory: .
-          root_file: src/resume.tex
-          report_type: html
-          report_file: report.html
-      - name: Upload textidote report
-        uses: actions/upload-artifact@v2
-        with:
-            name: textidote_report
-            path: report.html
-            if-no-files-found: error
-      - name: Assert num_warnings == 0
-        if: ${{ steps.textidote-main.outputs.num_warnings != 0 }}
-        run: 'echo "num_warnings: ${{ steps.textidote-main.outputs.num_warnings }}"; exit 1;'
 
   build-latex:
     name: build-latex
@@ -71,16 +53,16 @@ jobs:
       - name: Upload resume.pdf
         uses: actions/upload-artifact@v2
         with:
-            name: resume
-            path: src/resume.pdf
-            if-no-files-found: error
+          name: resume
+          path: src/resume.pdf
+          if-no-files-found: error
 
   release:
     name: release
     if: github.ref == 'refs/heads/main'
     needs:
+      - prettier
       - super-linter
-      - textidote
       - build-latex
     runs-on: ubuntu-20.04
     steps:
@@ -104,15 +86,15 @@ jobs:
           GIT_COMMITTER_NAME: kirintwn
           GIT_COMMITTER_EMAIL: cy91244@gmail.com
         run: |
-            npx \
-              -p @semantic-release/commit-analyzer \
-              -p @semantic-release/release-notes-generator \
-              -p conventional-changelog-conventionalcommits \
-              -p @semantic-release/changelog \
-              -p @semantic-release/git \
-              -p @semantic-release/github \
-              -p semantic-release \
-              semantic-release
+          npx \
+            -p @semantic-release/commit-analyzer \
+            -p @semantic-release/release-notes-generator \
+            -p conventional-changelog-conventionalcommits \
+            -p @semantic-release/changelog \
+            -p @semantic-release/git \
+            -p @semantic-release/github \
+            -p semantic-release \
+            semantic-release
 
   deploy-gh-pages:
     name: deploy-gh-pages

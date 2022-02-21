@@ -1,20 +1,65 @@
-\sectionTitle{Selected Projects \& Open Source Contribution}{\faLaptop}
-\begin{projects}
-  \project
-  {Wireless Multicast Video Streaming Recovery System}{\github{kirintwn/prompeg-decoder}}
-  {}
-  {Built a proxy server with C++ that recover lost packets from FFmpeg \textbf{Pro-MPEG FEC} video stream in real-time which achieved packet loss rate from 10\% down to less than \textbf{3\%}}
-  {C++,FFmpeg,Socket Programming}
+%-------------------------------------------------------------------------------
+%  SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Selected Projects \& Open Source Contribution}
 
-  \project
-  {AWS CDK}{\github{aws/aws-cdk}}
-  {}
-  {Developed features including adding option to specify bundling docker entrypoint \& option to \textbf{auto delete} images upon ECR repository removal using CloudFormation custom resource with \textbf{Lambda} function; fixed props validation for EC2 volume \& ECR repository constructs; migrated tests from nodeunit to \textbf{Jest}}
-  {TypeScript,Infrastructure as Code}
 
-  \project
-  {Open Source Communities}{\github{cdnjs/cdnjs} \website{https://cdkmeetup.kktix.cc/}{Taiwan CDK Meetup} \website{https://coscup.org/}{COSCUP}}
-  {}
-  {Devoted to cdnjs camp in NCTU; added / updated 15+ packages in cdnjs; dedicated in Taiwan CDK Meetup community; exchanged directly with AWS developer advocate; attended COSCUP 2017, 2018, 2019 \& 2020}
-  {cdnjs,COSCUP,CDK Meetup}
-\end{projects}
+%-------------------------------------------------------------------------------
+%  CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cventry
+    {} % Role
+    {Wireless Multicast Video Streaming Recovery System} % Event
+    {} % Location
+    {} % Date(s)
+    {
+      \vspace{-2em}
+      \begin{cvitems} % Description(s)
+        \item {Built a proxy server with C++ that recover lost packets from FFmpeg \textbf{Pro-MPEG FEC} video stream in real-time which achieved packet loss rate from 10\% down to less than \textbf{3\%}}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {} % Role
+    {EEG Desktop Application} % Event
+    {} % Location
+    {} % Date(s)
+    {
+      \vspace{-4em}
+      \begin{cvitems} % Description(s)
+        \item {Developed a real-time high-resolution (250Hz, 24bit) electroencephalography (EEG) desktop app that supported 6 types of plot using \textbf{WebSocket}, PyQt, \& Matplotlib}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {} % Role
+    {AWS CDK} % Event
+    {} % Location
+    {} % Date(s)
+    {
+      \vspace{-1.5em}
+      \begin{cvitems} % Description(s)
+        \item {Developed features including adding option to specify bundling docker entrypoint \& option to auto delete images upon ECR repository removal using CloudFormation custom resource with \textbf{Lambda} function; fixed props validation for EC2 volume \& ECR repository constructs; migrated tests from nodeunit to \textbf{Jest}}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+  \cventry
+    {} % Role
+    {Open Source Communities} % Event
+    {} % Location
+    {} % Date(s)
+    {
+      \vspace{-2em}
+      \begin{cvitems} % Description(s)
+        \item {Devoted to cdnjs camp in NCTU; added / updated 15+ packages in cdnjs; dedicated in Taiwan CDK Meetup community; exchanged directly with AWS developer advocate; attended DevOps Taiwan Meetups \& every COSCUP since 2017}
+      \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
