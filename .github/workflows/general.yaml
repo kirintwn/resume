@@ -25,37 +25,6 @@ jobs:
           VALIDATE_YAML: "true"
           FILTER_REGEX_EXCLUDE: '.*/(CHANGELOG\.md)'
 
-  textidote:
-    name: textidote
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Run textidote
-        uses: ChiefGokhlayeh/textidote-action@v4
-        id: textidote-main
-        with:
-          working_directory: .
-          root_file: src/resume.tex
-          report_type: plain
-          report_file: ""
-      - name: Run textidote to generate report
-        uses: ChiefGokhlayeh/textidote-action@v4
-        with:
-          working_directory: .
-          root_file: src/resume.tex
-          report_type: html
-          report_file: report.html
-      - name: Upload textidote report
-        uses: actions/upload-artifact@v2
-        with:
-            name: textidote_report
-            path: report.html
-            if-no-files-found: error
-      - name: Assert num_warnings == 0
-        if: ${{ steps.textidote-main.outputs.num_warnings != 0 }}
-        run: 'echo "num_warnings: ${{ steps.textidote-main.outputs.num_warnings }}"; exit 1;'
-
   build-latex:
     name: build-latex
     runs-on: ubuntu-20.04
@@ -71,16 +40,15 @@ jobs:
       - name: Upload resume.pdf
         uses: actions/upload-artifact@v2
         with:
-            name: resume
-            path: src/resume.pdf
-            if-no-files-found: error
+          name: resume
+          path: src/resume.pdf
+          if-no-files-found: error
 
   release:
     name: release
     if: github.ref == 'refs/heads/main'
     needs:
       - super-linter
-      - textidote
       - build-latex
     runs-on: ubuntu-20.04
     steps:
@@ -95,7 +63,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
@@ -104,15 +72,15 @@ jobs:
           GIT_COMMITTER_NAME: kirintwn
           GIT_COMMITTER_EMAIL: cy91244@gmail.com
         run: |
-            npx \
-              -p @semantic-release/commit-analyzer \
-              -p @semantic-release/release-notes-generator \
-              -p conventional-changelog-conventionalcommits \
-              -p @semantic-release/changelog \
-              -p @semantic-release/git \
-              -p @semantic-release/github \
-              -p semantic-release \
-              semantic-release
+          npx \
+            -p @semantic-release/commit-analyzer \
+            -p @semantic-release/release-notes-generator \
+            -p conventional-changelog-conventionalcommits \
+            -p @semantic-release/changelog \
+            -p @semantic-release/git \
+            -p @semantic-release/github \
+            -p semantic-release \
+            semantic-release
 
   deploy-gh-pages:
     name: deploy-gh-pages
@@ -132,4 +100,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: .
           force_orphan: true
-          commit_message: 'release: update gh-pages to latest version'
+          commit_message: "release: update gh-pages to latest version"
