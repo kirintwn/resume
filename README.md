@@ -1,7 +1,7 @@
 # Kirin Hou's Resume
 
 [![Release](https://img.shields.io/github/release/kirintwn/resume.svg?style=for-the-badge)](https://github.com/kirintwn/resume/releases/latest)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](/LICENSE.md)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](./LICENSE)
 [![Build status](https://img.shields.io/github/workflow/status/kirintwn/resume/general/main?style=for-the-badge)](https://github.com/kirintwn/resume/actions?workflow=general)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-release)
 
