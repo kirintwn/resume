@@ -29,7 +29,7 @@ git clone git@github.com:kirintwn/resume.git
 
 - test: `earthly +test`
 - build: `earthly +build`
-- run test & build: `earthly`
+- run test & build: `earthly +all`
 
 ## Credits
 
