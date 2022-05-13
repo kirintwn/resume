@@ -1,3 +1,16 @@
+## [2.1.0](https://github.com/kirintwn/resume/compare/v2.0.0...v2.1.0) (2022-05-13)
+
+
+### Features
+
+* **contents:** change current job title ([#17](https://github.com/kirintwn/resume/issues/17)) ([3e0fb9d](https://github.com/kirintwn/resume/commit/3e0fb9dca18f290eae75a82c5e4c51037c45e71b))
+
+
+### Documentations
+
+* update broken license link in README ([#15](https://github.com/kirintwn/resume/issues/15)) ([81443b5](https://github.com/kirintwn/resume/commit/81443b58b82a31150f2ce0c4369b53f45653657a))
+* update incomplete commands in README ([#16](https://github.com/kirintwn/resume/issues/16)) ([694a207](https://github.com/kirintwn/resume/commit/694a20724a203631401badd1e076af7fe76c0543))
+
 ## [2.0.0](https://github.com/kirintwn/resume/compare/v1.6.0...v2.0.0) (2022-02-21)
 
 
