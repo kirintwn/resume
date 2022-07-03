@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run prettier checks
         uses: creyD/prettier_action@v4.2
         with:
-          prettier_version: '2.5.1'
+          prettier_version: '2.7.1'
           prettier_options: --check **/*.{yaml,json,md}
           dry: true
 
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run super linter
         uses: github/super-linter/slim@v4
         env:
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Compile latex documents
         uses: xu-cheng/latex-action@v2
         with:
@@ -51,7 +51,7 @@ jobs:
           root_file: resume.tex
           latexmk_use_lualatex: true
       - name: Upload resume.pdf
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: resume
           path: src/resume.pdf
@@ -67,15 +67,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Download resume.pdf from build-latex
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: resume
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
       - name: Release
@@ -104,7 +104,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Download resume.pdf from build-latex
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: resume
       - name: Deploy to gh-pages branch
